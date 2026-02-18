@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemeinschaft & Tradition - Bremscheid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f7f2;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: #1e3d2f;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            background: #2e7d32;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .back-button:hover {
+            background: #1b5e20;
+            transform: translateX(-5px);
+        }
+
+        header h2 {
+            color: white;
+            margin-bottom: 0;
+        }
+
+        section {
+            padding: 120px 10%;
+            margin-top: 70px;
+        }
+
+        h1 {
+            color: #1e3d2f;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #1e3d2f;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .highlight-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 30px auto;
+            display: block;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #a8e6a1;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            background: #1e3d2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        @media(max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+
+            .back-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 80px 5%;
+                margin-top: 100px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .content-image {
+                max-width: 100%;
+            }
+
+            .modal-close {
+                top: 15px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2 style="color:white;">Bremscheid</h2>
+    <button class="back-button" onclick="history.back()">← Zurück</button>
+</header>
+
+<section>
+    <div class="highlight-section">
+        <h1>Gemeinschaft & Tradition</h1>
+        <p>
+            In Bremscheid wird Gemeinschaft großgeschrieben. Ein besonderes
+            Highlight ist das Dorffest, das alle zwei Jahre stattfindet und
+            abwechselnd in Isingheim und Bremscheid gefeiert wird.
+            Dieses Fest stärkt den Zusammenhalt der Dörfer und bringt
+            Jung und Alt zusammen.
+        </p>
+        
+        <img src="https://www.schmallenberger-sauerland.de/fileadmin/_processed_/e/b/csm_KPK227205_b40168090f.jpg" alt="Dorffest Bremscheid" class="content-image" onclick="openModal(this.src)">
+        
+        <p>
+            Die Traditionen in Bremscheid sind tief verwurzelt und prägen das
+            Dorfleben nachhaltig. Neben dem Dorffest gibt es zahlreiche weitere
+            Veranstaltungen und Aktivitäten, die die Gemeinschaft zusammenbringen
+            und das kulturelle Erbe bewahren.
+        </p>
+        
+        <p>
+            Die Bewohner von Bremscheid sind stolz auf ihre Geschichte und Kultur.
+            Der Zusammenhalt der Gemeinschaft spiegelt sich in vielen kleinen und
+            großen Gesten des Alltags wider – sei es bei gemeinsamen Projekten,
+            nachbarschaftlicher Hilfe oder bei den zahlreichen Festen und Feiern
+            im Laufe des Jahres.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p><span id="year"></span> Bremscheid</p>
+</footer>
+
+<div id="imageModal" class="modal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Vergrößertes Bild">
+</div>
+
+<script>
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        modalImg.src = imageSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
